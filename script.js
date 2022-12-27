@@ -8,15 +8,36 @@ let minutes
 const minutesDisplay = document.querySelector(".minutes")
 const secondsDisplay = document.querySelector(".seconds")
 
+function resetControls () {
+    buttonPlay.classList.remove("hide") /* button play appears. */
+    buttonPause.classList.add("hide") /* button pause hide. */
+    buttonSet.classList.remove("hide") /* button set appears. */
+    buttonStop.classList.add("hide") /* button stop hide. */
+}
+
+function updateTimerDisplay(minutes, seconds) {
+    minutesDisplay.textContent = String(minutes).padStart(2, "0") /* To change the text (minutes). */
+    secondsDisplay.textContent = String(seconds).padStart(2, "0") /* To change the text (minutes). */
+}
+
 function countdown() {
     setTimeout(function() {
-        let seconds = number(secondsDisplay.textContent)
-    
+        let seconds = Number(secondsDisplay.textContent)
+        let minutes = Number(minutesDisplay.textContent)
+        
+        updateTimerDisplay(minutes, 0)
+        
+        if(minutes <= 0) {
+            resetControls ()        
+            return
+        }
+
         if(seconds <= 0) {
             seconds = 60
+            --minutes
         }
     
-        secondsDisplay.textContent = seconds - 1
+        updateTimerDisplay(minutes, String(seconds - 1))
 
         countdown()
 
@@ -38,10 +59,7 @@ buttonPause.addEventListener("click", function() {
 })
 
 buttonStop.addEventListener("click", function() {
-    buttonPlay.classList.remove("hide") /* button play appears. */
-    buttonPause.classList.add("hide") /* button pause hide. */
-    buttonSet.classList.remove("hide") /* button set appears. */
-    buttonStop.classList.add("hide") /* button stop hide. */
+    resetControls ()        
 })
 
 buttonSoundOff.addEventListener("click", function() {
@@ -56,5 +74,5 @@ buttonSoundOn.addEventListener("click", function() {
 
 buttonSet.addEventListener("click", function() {
     minutes = prompt("How many minutes?")
-    minutesDisplay.textContent = minutes /* To change the text (minutes). */
+    updateTimerDisplay(minutes, 0)
 })
