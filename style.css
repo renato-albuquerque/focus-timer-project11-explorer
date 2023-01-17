@@ -30,6 +30,7 @@ body {
 main {
     justify-self: center; /* Strategy to center the elements: main (#timer and #controls). For footer (button), to put in the bottom right corner. */
     align-self: end;
+    /* When use display: grid; use this properties to position the element (justify-self and align-self). */
 }
 
 button {
@@ -72,6 +73,7 @@ button svg {
 footer {
     justify-self: end; /* Strategy to center the elements: main (#timer and #controls). For footer (button), to put in the bottom right corner. */
     align-self: end;
+    /* When use display: grid; use this properties to position the element (justify-self and align-self). */
 
     padding: 0 2rem 2rem 0; /* Updated values. */
 }
