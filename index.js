@@ -30,22 +30,6 @@ function resetTimer() {
   clearTimeout(timerTimeOut)
 }
 
-function pressButton() {
-  buttonPressAudio.play()
-}
-
-function timeEnd() {
-  kitchenTimer.play()
-}
-
-function backGroundSoundPlay() {
-  bgAudio.play()
-}
-
-function backGroundSoundPause() {
-  bgAudio.pause()
-}
-
 function countdown(){
   timerTimeOut = setTimeout(function() {
     let seconds =  Number(secondsDisplay.textContent)
@@ -62,7 +46,7 @@ function countdown(){
     }
 
     if( seconds <= 0 ) {
-      seconds = 6
+      seconds = 6 // Correct value is 60.
       --minutes
     }
 
@@ -70,6 +54,22 @@ function countdown(){
 
     countdown()
   }, 1000)
+}
+
+function pressButton() {
+  buttonPressAudio.play()
+}
+
+function timeEnd() {
+  kitchenTimer.play()
+}
+
+function backGroundSoundPlay() {
+  bgAudio.play()
+}
+
+function backGroundSoundPause() {
+  bgAudio.pause()
 }
 
 buttonPlay.addEventListener('click', function() {
