@@ -40,7 +40,7 @@ function countdown(){
 
     if (isFinished) {
       resetControls()
-      updateTimerDisplay()
+      updateTimerDisplay(minutes, seconds)
       timeEnd()
       return
     }
