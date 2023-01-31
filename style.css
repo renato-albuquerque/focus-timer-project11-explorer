@@ -18,6 +18,16 @@
     font-size: 62.5%;
 }
 
+.lightMode:root {
+    --bg-color: white; 
+    --bg-controls: #121218bd;
+    --text-color:#121218;    
+}
+
+header button.iconTurnsBlack svg path {      /* In the Dight Mode, the "light mode icon" turns to white. */        
+    fill: #121218;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -76,4 +86,10 @@ footer {
     /* When use display: grid; use this properties to position the element (justify-self and align-self). */
 
     padding: 0 2rem 2rem 0; /* Updated values. */
+}
+
+.darkLightMode {
+    display: flex;
+    justify-content: right;
+    padding: 0 2rem 2rem 0;
 }

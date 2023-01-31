@@ -1,3 +1,5 @@
+// CONSTS.
+
 const buttonPlay = document.querySelector('.play')
 const buttonPause = document.querySelector('.pause')
 const buttonStop = document.querySelector('.stop')
@@ -6,12 +8,20 @@ const buttonSoundOn = document.querySelector('.sound-on')
 const buttonSoundOff = document.querySelector('.sound-off')
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
+
 let minutes = Number(minutesDisplay.textContent)
 let timerTimeOut
+
+const buttonDarkMode = document.querySelector('.darkMode')
+const buttonLightMode = document.querySelector('.lightMode')
+const html = document.querySelector('html')
 
 const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
 const kitchenTimer = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true")
 const bgAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/bg-audio.mp3?raw=true")
+
+
+// FUNCTIONS.
 
 function resetControls() {
   buttonPlay.classList.remove('hide')
@@ -72,6 +82,9 @@ function backGroundSoundPause() {
   bgAudio.pause()
 }
 
+
+// EVENTS.
+
 buttonPlay.addEventListener('click', function() {
   buttonPlay.classList.add('hide')
   buttonPause.classList.remove('hide')
@@ -120,3 +133,12 @@ buttonSoundOn.addEventListener('click', function() {
   backGroundSoundPause()
 })
 
+buttonDarkMode.addEventListener('click', function() {
+  html.classList.remove('lightMode')
+  buttonLightMode.classList.remove('iconTurnsBlack')
+})
+
+buttonLightMode.addEventListener('click', function() {
+  html.classList.add('lightMode')
+  buttonLightMode.classList.add('iconTurnsBlack')
+})
