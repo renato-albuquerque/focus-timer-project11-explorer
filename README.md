@@ -5,8 +5,8 @@ Project with "Light and Dark Mode".
 
 🔗 [Click here to access](https://renato-albuquerque.github.io/focus-timer-project11-explorer/)
 
-![screenshot](images/screencapture-dark-mode.png.png)
-![screenshot](images/screencapture-light-mode.png.png)
+![screenshot](images/screencapture-dark-mode.png)
+![screenshot](images/screencapture-light-mode.png)
 
 ## Technologies
 
